@@ -1,23 +1,35 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import DataContext from '../context/DataContext';
 import { getAllRepos, getDataUser } from '../services/requestApi';
 
 function Search() {
     const { setDataRepo, setDataUser } = useContext(DataContext);
+    const [search, setSearch] = useState('');
 
-    useEffect(() => {
-        (async () => {
-            const response = await getAllRepos('aryherton/repos');
-            const dataUser = await getDataUser('aryherton');
+    const getValueInput = ({ target: { value } }) => {
+        setSearch(value);
+    }
+
+    const getData = async () => {
+        if (search) {
+            const response = await getAllRepos(`${search}/repos`);
+            const dataUser = await getDataUser(search);
             setDataRepo(response);
             setDataUser(dataUser);
-        })();
-    }, [setDataRepo, setDataUser]);
+        }
+    };
 
   return (
     <div>
-      <h1>Search</h1>
+      <label htmlFor="searchRepos">
+        <input
+          type="text"
+          placeholder="digite o nomedo usuário"
+          onChange={ getValueInput }
+        />
+      </label>
+      <button onClick={ getData }>Buscar</button>
     </div>
   );
 }
