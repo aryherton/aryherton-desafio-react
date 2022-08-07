@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 
 import DataContext from '../context/DataContext';
 import { getAllRepos, getDataUser } from '../services/requestApi';
+import StyledSearchWrapper from '../style/pagesStyle/styledPageSearch';
+import Lupa from '../img/lupa.png';
 
 function Search() {
     const { setDataRepo, setDataUser } = useContext(DataContext);
@@ -21,16 +23,25 @@ function Search() {
     };
 
   return (
-    <div>
-      <label htmlFor="searchRepos">
-        <input
-          type="text"
-          placeholder="digite o nomedo usuário"
-          onChange={ getValueInput }
-        />
-      </label>
-      <button onClick={ getData }>Buscar</button>
-    </div>
+    <StyledSearchWrapper>
+      <main>
+        <section>
+          <label htmlFor="searchRepos">
+            Buscar Repositório no github
+          </label>
+          <input
+            id="searchRepos"
+            type="text"
+            placeholder="digite o nomedo usuário"
+            onChange={ getValueInput }
+          />
+        </section>
+        <button onClick={getData}>
+          <img src={Lupa} alt="lupa" />
+          <span>Buscar</span>
+        </button>
+      </main>
+    </StyledSearchWrapper>
   );
 }
 
