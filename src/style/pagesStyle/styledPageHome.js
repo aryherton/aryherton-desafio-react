@@ -26,12 +26,14 @@ const StyledHomeWrapper = styled.div `
       }
       #nameUser {
         font-family: 'Noto Sans', sans-serif;
+        font-size: 1.2rem;
         letter-spacing: 1px;
         width: 360px;
         height: 70px;
         align-self: center;
       }
       button {
+        margin-top: 5px;
         width: 360px;
         height: 40px;
         background-color: ${props => props.theme.colors.buttonFollowBG};
@@ -80,11 +82,6 @@ const StyledHomeWrapper = styled.div `
           width: 20px;
         }
       }
-    }
-    aside {
-      width: 57%;
-      height: 100%;
-      background-color: yellow;
     }
   }
 `;
