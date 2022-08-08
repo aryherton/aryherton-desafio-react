@@ -19,7 +19,7 @@ const StyledHomeWrapper = styled.div `
       }
       #imgUser {
         position: absolute;
-        margin-top: -40px;
+        margin-top: -35px;
         border-radius: 50%;
         width: 360px;
         height: 360px;
@@ -39,6 +39,11 @@ const StyledHomeWrapper = styled.div `
         background-color: ${props => props.theme.colors.buttonFollowBG};
         border: 1px solid #c4c9ce;
         border-radius: 5px;
+      }
+      button:hover {
+        color: #FFFFFF;
+        font-size: 18px;
+        background-color: #c4c9ce;
       }
       p {
         margin-top: 20px;
