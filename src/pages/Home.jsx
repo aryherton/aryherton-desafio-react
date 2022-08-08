@@ -28,7 +28,7 @@ function Home() {
             <h1>{ dataUser.name }</h1>
             <span>{ dataUser.login }</span>
           </div>
-          <button>Follow</button>
+          <a href={dataUser.html_url }><button>Follow</button></a>
           <p>{ dataUser.bio }</p>
           <div id="followers">
             <img id="icon_people" src={ People } alt="icon_people" />
