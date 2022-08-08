@@ -50,6 +50,13 @@ const StyledSearchWrapper = styled.div `
       align-items: center;
       justify-content: center;
     }
+    .errorMessage {
+      position: absolute;
+      margin-top: 120px;
+      color: #8c151e;
+      font-weight: bolder;
+      font-size: 14px;
+    }
   }
 `;
 
