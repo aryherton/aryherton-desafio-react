@@ -7,23 +7,34 @@ import StyledSearchWrapper from '../style/pagesStyle/styledPageSearch';
 import Lupa from '../img/lupa.png';
 
 function Search() {
-    const navigate = useNavigate();
-    const { setDataRepo, setDataUser } = useContext(DataContext);
-    const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  const { setDataRepo, setDataUser } = useContext(DataContext);
+  const [valueInput, setSearch] = useState('');
+  const [errorValueInput, setErrorValueInput] = useState('');
 
-    const getValueInput = ({ target: { value } }) => {
-        setSearch(value);
+  const getValueInput = ({ target: { value } }) => {
+    setSearch(value);
+    setErrorValueInput('');
+  }
+
+  const getData = async () => {
+    if (valueInput) {
+      const dataUser = await getDataUser(valueInput);
+
+      if (dataUser === 404) {
+        setErrorValueInput('NotFound');
+      } else {
+        const response = await getAllRepos(`${valueInput}/repos`);
+        setDataRepo(response);
+        setDataUser(dataUser);
+        navigate('/home');
+      }
+      return;
     }
-
-    const getData = async () => {
-        if (search) {
-            const response = await getAllRepos(`${search}/repos`);
-            const dataUser = await getDataUser(search);
-            setDataRepo(response);
-            setDataUser(dataUser);
-            navigate('/home');
-        }
-    };
+    errorValueInput === 'NotFound'
+      ? setErrorValueInput('NotFound')
+      : setErrorValueInput('empty');
+  };
 
   return (
     <StyledSearchWrapper>
@@ -39,10 +50,21 @@ function Search() {
             onChange={ getValueInput }
           />
         </section>
-        <button onClick={getData}>
-          <img src={Lupa} alt="lupa" />
+        <button onClick={ getData }>
+          <img src={ Lupa } alt="lupa" />
           <span>Buscar</span>
         </button>
+        { errorValueInput === 'empty'
+          &&
+            <p className="errorMessage">
+              Informe um nome de usuário válido do github.
+            </p>}
+        { errorValueInput === 'NotFound'
+          &&
+          <p className="errorMessage">
+            Usuário não encontrado no github. Verifique se você digitou o nome corretamente.
+          </p>
+        }
       </main>
     </StyledSearchWrapper>
   );
