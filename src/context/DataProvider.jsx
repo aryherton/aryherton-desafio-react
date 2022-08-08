@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DataContext from './DataContext';
 
 function DataProvider({ children }) {
-    const [dataUser, setDataUser] = useState({});
+    const [dataUser, setDataUser] = useState('');
     const [dataRepo, setDataRepo] = useState([]);
     const OBJ_DATA_AND_FUNCTIONS = {
         dataUser,
