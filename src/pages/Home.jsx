@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import DataContext from '../context/DataContext';
 import Header from '../components/Header';
+import CardRepos from '../components/CardRepos';
 import StyledHomeWrapper from '../style/pagesStyle/styledPageHome';
 import People from '../img/people.png';
 import Star from '../img/star.png';
@@ -44,7 +45,7 @@ function Home() {
             { dataUser.email }
           </div>
         </section>
-        <aside>Repositoriossss</aside>
+        <CardRepos />
       </main>
     </StyledHomeWrapper>
   );
