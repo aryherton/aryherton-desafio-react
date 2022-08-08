@@ -25,7 +25,9 @@ function CardRepos() {
     <StyledCardReposWrapper>
       { dataRepo?.map((repo) => (
         <div id="divRepo" key={repo.id}>
-          <h1 id="h1NameRepo">{ repo.name }</h1>
+          <a href={repo.html_url }>
+            <h1 id="h1NameRepo">{ repo.name }</h1>
+          </a>
           <div id="infoRepo">
             { repo.full_name && <p id="pFullName">{ repo.full_name }</p> }
             { repo.description && <p id="pDescription">{ repo.description }</p> }
