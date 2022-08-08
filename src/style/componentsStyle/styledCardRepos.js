@@ -9,6 +9,9 @@ const StyledCardReposWrapper = styled.aside `
     border-bottom: 1px solid #c4c9ce;
     font-family: 'Roboto', sans-serif;
     color: #878a91;
+    a {
+      text-decoration: none;
+    }
     #h1NameRepo {
       font-family: 'Roboto', sans-serif;
       font-size: 1.5rem;
