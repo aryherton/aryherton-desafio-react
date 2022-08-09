@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import DataContext from '../context/DataContext';
 import { getAllRepos, getDataUser } from '../services/requestApi';
+import ERROR_MESSAGE from '../help/MessageErro';
 import StyledSearchWrapper from '../style/pagesStyle/styledPageSearch';
 import Lupa from '../img/lupa.png';
 
@@ -50,19 +51,19 @@ function Search() {
             onChange={ getValueInput }
           />
         </section>
-        <button onClick={ getData }>
+        <button name="buscar" onClick={ getData }>
           <img src={ Lupa } alt="lupa" />
-          <span>Buscar</span>
+          Buscar
         </button>
         { errorValueInput === 'empty'
           &&
             <p className="errorMessage">
-              Informe um nome de usuário válido do github.
+              { ERROR_MESSAGE.input_empty }
             </p>}
         { errorValueInput === 'NotFound'
           &&
           <p className="errorMessage">
-            Usuário não encontrado no github. Verifique se você digitou o nome corretamente.
+            { ERROR_MESSAGE.not_found }
           </p>
         }
       </main>
