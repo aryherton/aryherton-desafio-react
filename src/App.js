@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 
 import DataProvider from './context/DataProvider';
 import Home from './pages/Home';
@@ -10,15 +10,16 @@ import light from './style/themes/light';
 import GlobalStyle from './style/global/globalStyle';
 
 function App() {
+  const routes = useRoutes([
+    { path: '/', element: <Search /> },
+    { path: '/home', element: <Home /> },
+    {path: '*', element: <NotFound />},
+  ]);
   return (
     <ThemeProvider theme={light}>
       <GlobalStyle />
       <DataProvider>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route exact path="/" element={<Search />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        { routes }
       </DataProvider>
     </ThemeProvider>
   );
