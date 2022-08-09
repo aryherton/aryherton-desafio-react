@@ -5,11 +5,14 @@ para consumir api(github).
 
 ## Funcionalidades
 
-    [*] Pesquisar pelo nome do usuário, deve redirecionar para página de perfil. Com informações do usuário e seus repositórios
+    [*] Pesquisar pelo nome do usuário, deve redirecionar para página de perfil.
+      Com informações do usuário e seus repositórios
 
-    [*]Clicar no botão "Buscar", com campo de pesquisa sem valor. Deve retornar a seguinte mensagem: "informe um nome de usuário válido do github".
+    [*]Clicar no botão "Buscar", com campo de pesquisa sem valor.
+      Deve retornar a seguinte mensagem: "informe um nome de usuário válido do github".
 
-    [*]Pesquisar por um nome de usuário invalido deve retornar: "Usuário não encontrado no github. Verifique se você digitou o nome corretamente"
+    [*]Pesquisar por um nome de usuário invalido deve retornar:
+      "Usuário não encontrado no github. Verifique se você digitou o nome corretamente"
 
 
 ## 🚀 Começando
