@@ -1,29 +1,82 @@
-#Desafio frontend ReactJS
-##Objetivo:
-Desenvolver uma aplicação React que mostre o perfil do desenvolvedor e liste os seus repositórios do github. (Pode utilizar como base no create-react-app).
-##User stories:
-SENDO um usário na página principal, POSSO pesquisar o usuário pelo meu nome ou qualquer outro nome e pequisar no github PARA QUE obtenha os dados do perfil e os respectivos respositórios.
-##Critérios de aceite
-DADO QUE o usuário na home-page digitar o nome de usuário QUANDO clicar no botão Pesquisar, ENTÃO o sistema pesquisa e preenche a tela de perfil mostrando o resultado.
-DADO QUE o usuário na home-page QUANDO clicar no botão Pesquisar sem preencher o campo, ENTÃO o sistema retorna a mensagem: "informe um nome de usuário válido do github".
-DADO QUE o usuário na home-page e digitar o usuário "UsuarioqueProvavelmenteNãoExisteLá" QUANDO clicar no botão Pesquisar ENTÃO o sistema faz a consulta e retorna a mensagem: "Usuário não encontrado no github. Verifique se você digitou o nome corretamente"
-##Orientações Técnicas:
-Utilizar um biblioteca para consumo de API: sugestão Axios.
-Utilizar uma biblioteca de roteamento para alternar entre as paginas: sugestão react-router-dom.
-Observar a orientação a componente para reuso de código.
-CSS liberado utilizar como achar melhor. Do clássico as libraries (bootstrap, material UI, etc.).
-Ser Responsivo
-##Instruções gerais:
-Faça um fork deste projeto. (ou clone)
-Crie uma branch (ou novo repositório) com o padrão seunome-desafio-react.
-Ao finalizar este desafio, enviar o link via whats para o solicitante.
-##Referências da API:
-Documentação oficial do GitHub: https://docs.github.com/en/rest
-API de busca de usuários do GitHub: https://api.github.com/users/username
-API de busca de repositórios do usuário pesquisado: https://api.github.com/users/username/repos
-##UI
-Design da tela pode ser replicada a tela de perfil e repositórios do próprio github.
-Exemplo na pasta images deste repositório.
-##Diferenciais:
-Legibilidade;
-Boa documentação;
+# Desafio React(Teste seletivo - Atlas)
+
+Esse projeto tem como objetivo, desenvolver uma aplicação,
+para consumir api(github).
+
+## Funcionalidades
+
+    [*] Pesquisar pelo nome do usuário, deve redirecionar para página de perfil. Com informações do usuário e seus repositórios
+
+    [*]Clicar no botão "Buscar", com campo de pesquisa sem valor. Deve retornar a seguinte mensagem: "informe um nome de usuário válido do github".
+
+    [*]Pesquisar por um nome de usuário invalido deve retornar: "Usuário não encontrado no github. Verifique se você digitou o nome corretamente"
+
+
+## 🚀 Começando
+
+Seguindo as instruções abaixo, você conseguira rodar localmente o projeto para fins de desenvolvimento e teste.
+
+</br>
+
+### 📋 Pré-requisitos
+
+node 16 <img src="./src/img/nodejs.png" alt="nodejs" /> <br /><br />
+<a href="https://nodejs.org/pt-br/download/">Instalar Node.js</a><br /><br />
+
+### 🔧 Instalação
+
+Baixe o projeto para sua máquina:
+
+```git clone git@github.com:aryherton/aryherton-desafio-react.git```
+
+Acesse a pasta do projeto:
+
+```cd - caminho da pasta -```
+
+Dentro da pasta do projeto digite:
+
+```npm install```
+
+Apos instalar as dependências, rode o seguinte comando:
+
+```npm start```
+
+## 🛠️ Construído com
+
+<img src="./src/img/react.png" alt="react"/>
+<img src="./src/img/style-components.png" alt="styel_components" />
+</br>
+-----------------------------------------------------------------------------------------------------------------------------
+</br>
+
+## Projeto
+### Link: https://desafio-atlas-seven.vercel.app/home
+
+<img src="./src/img/video.gif" alt="video_gif" />
+</br></br>
+
+## Pagina de pesquisa:
+
+<img src="./src/img/pageSearch.png" alt="page_search" />
+
+</br></br>
+
+## Pagina de perfil:
+
+<img src="./src/img/pageHome.png" alt="page_home" />
+
+</br></br>
+
+## ✒️ Autor
+
+</br>
+
+Ary Barbosa<br>
+aryhertonbarbosa@gmail.com<img src="./src/img/gmail.png" alt="gmail" /><br /><br />
+
+<a href="https://github.com/aryherton">github<img src="./src/img/github.png" alt="github" /></a><br /><br />
+<a href="https://www.linkedin.com/in/aryherton/"> linkedin<img src="./src/img/linkedin.png" alt="linkedin" /></a><br /><br />
+
+
+Gratidão
+ 😊
